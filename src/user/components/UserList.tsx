@@ -13,7 +13,7 @@ const UsersList = ({ items }) => {
   }
 
   return (
-    <ul className="list-none mx-auto p-0 w-[90%] max-w-[50rem] flex justify-center flex-wrap">
+    <ul className="container list-none mx-auto p-0 w-[90%] max-w-[50rem] flex justify-center flex-wrap">
       {items.map((user) => (
         <UserItem
           key={user.id}

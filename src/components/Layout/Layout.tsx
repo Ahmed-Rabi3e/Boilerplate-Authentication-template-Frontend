@@ -1,7 +1,7 @@
 import { useLayoutEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 
 interface LayoutProps {
   hideHeader?: boolean;
@@ -16,14 +16,14 @@ const Layout: React.FC<LayoutProps> = ({ hideHeader, hideFooter }) => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-main text-white">
+    <div className="flex flex-col min-h-screen text-white">
       {!hideHeader && <Header />}
 
-      <main className="flex-grow">
+      <main className="flex-grow bg-mainbackground">
         <Outlet />
       </main>
 
-      {/* {!hideFooter && <Footer />} */}
+      {!hideFooter && <Footer />}
     </div>
   );
 };

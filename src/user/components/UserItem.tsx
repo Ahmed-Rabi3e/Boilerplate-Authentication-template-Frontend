@@ -5,7 +5,7 @@ import Card from "../../shared/components/UIElements/Card";
 
 const UserItem = ({ id, image, name, placeCount }) => {
   return (
-    <li className="m-4 w-[calc(45%-2rem)] min-w-[17.5rem] mt-24">
+    <li className="m-4 w-[calc(45%-2rem)] min-w-[17.5rem] mt-28">
       <Card className="p-0">
         <Link
           to={`/${id}/places`}
