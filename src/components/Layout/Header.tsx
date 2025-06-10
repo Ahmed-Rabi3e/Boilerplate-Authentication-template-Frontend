@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { RiMenu3Fill } from "react-icons/ri";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -11,6 +8,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useEffect, useState } from "react";
+import { RiMenu3Fill } from "react-icons/ri";
+import { Link, NavLink } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [isBlurred, setIsBlurred] = useState(false);
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed left-0 w-full h-[88px] bg-emerald-100 z-50 border-b-[0.5px] border-gray-600 transition-all duration-500 ${
+      className={`fixed left-0 w-full h-[88px] bg-emerald-50 z-50 border-b-[0.5px] border-gray-600 transition-all duration-500 ${
         isBlurred
           ? "bg-black backdrop-blur-[40px] bg-opacity-25"
           : "bg-white backdrop-blur-none bg-opacity-0"
@@ -44,7 +44,7 @@ const Header: React.FC = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex space-x-10 uppercase text-sm">
-          {["Home", "Users", "Contact", "Reservation"].map((item) => (
+          {["Home", "Profile"].map((item) => (
             <NavLink
               key={item}
               to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -64,7 +64,7 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-2">
           <NavLink
             to="/login"
-            className="hidden uppercase text-sm md:block bg-second  text-mainbackground px-4 py-2 font-semibold"
+            className="hidden uppercase text-sm md:block bg-emerald-400  text-mainbackground px-4 py-2 font-semibold"
           >
             Login
           </NavLink>
@@ -74,17 +74,17 @@ const Header: React.FC = () => {
         <div className="md:hidden flex items-center">
           <Sheet>
             <SheetTrigger asChild>
-              <Button className="bg-second text-mainbackground">
+              <Button className="bg-emerald-400 text-mainbackground">
                 <RiMenu3Fill size={50} />
               </Button>
             </SheetTrigger>
-            <SheetContent className="w-[320px] capitalize text-lg font-semibold bg-second text-white border-none">
+            <SheetContent className="w-[320px] capitalize text-lg font-semibold bg-emerald-400 text-white border-none">
               <SheetHeader>
                 <SheetTitle></SheetTitle>
                 <SheetDescription></SheetDescription>
               </SheetHeader>
               <div className="bg-main_black backdrop-blur-md py-3 mt-4 flex flex-col space-y-2">
-                {["Home", "Users", "Contact", "Reservation"].map((item) => (
+                {["Home", "Profile"].map((item) => (
                   <NavLink
                     key={item}
                     to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
