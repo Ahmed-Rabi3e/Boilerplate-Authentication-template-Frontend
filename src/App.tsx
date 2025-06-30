@@ -7,6 +7,8 @@ const Home = lazy(() => import("./pages/Home/Home"));
 const Profile = lazy(() => import("./pages/auth/Profile"));
 const Login = lazy(() => import("./pages/auth/Login"));
 const Register = lazy(() => import("./pages/auth/Register"));
+const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
+const ForgetPassword = lazy(() => import("./pages/auth/ForgetPassword"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 const protectedRoutes = [
@@ -28,6 +30,8 @@ const App = () => {
           {/* Public Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/resetpassword" element={<ResetPassword />} />
+          <Route path="/forgetpassword" element={<ForgetPassword />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </Suspense>

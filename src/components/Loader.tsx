@@ -19,7 +19,7 @@ export default function Loader() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-[200px] w-full">
+    <div className="flex items-center justify-center min-h-screen w-full">
       <motion.div
         className="relative w-20 h-20"
         variants={containerVariants}
@@ -29,7 +29,7 @@ export default function Loader() {
         {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-5 h-5 rounded-full bg-gradient-to-r from-teal-500 to-teal-700"
+            className="absolute w-5 h-5 rounded-full bg-gradient-to-r from-black to-black/90"
             style={{
               top: i % 2 === 0 ? 0 : "auto",
               bottom: i % 2 === 1 ? 0 : "auto",
